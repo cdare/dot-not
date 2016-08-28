@@ -103,10 +103,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestDbSet.cs" />
     <Compile Include="Controllers\ChallengesControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="TestDbSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

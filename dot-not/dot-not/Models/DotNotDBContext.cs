@@ -4,14 +4,14 @@ namespace dot_not.Models
     using System.Data.Entity;
     using System.Linq;
 
-    public class DotNotDBContext : DbContext
+    public class DotNotDBContext : DbContext, IDotNotDBContext
     {
 
         public DotNotDBContext()
             : base("name=DotNotDBContext")
         { }
 
-        public DbSet<ChallengeModel> Challenges { get; set; }
+        public IDbSet<ChallengeModel> Challenges { get; set; }
 
       
     }

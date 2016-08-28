@@ -13,13 +13,14 @@ namespace dot_not.Controllers
     public class ChallengesController : Controller
     {
  
+        private IDotNotDBContext idb = new DotNotDBContext();
         private DotNotDBContext db = new DotNotDBContext();
 
         public ChallengesController() { }
 
-        public ChallengesController(DotNotDBContext context)
+        public ChallengesController(IDotNotDBContext context)
         {
-            db = context;
+            idb = context;
         }
 
         // GET: Challenges/Details/5
@@ -29,7 +30,7 @@ namespace dot_not.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChallengeModel challengeModel = db.Challenges.Find(id);
+            ChallengeModel challengeModel = idb.Challenges.Find(id);
             if (challengeModel == null)
             {
                 return HttpNotFound();
@@ -55,8 +56,8 @@ namespace dot_not.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Challenges.Add(challengeModel);
-                db.SaveChanges();
+                idb.Challenges.Add(challengeModel);
+                idb.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +67,7 @@ namespace dot_not.Controllers
         [HttpPost]
         public ActionResult Submit(ChallengeViewModel challengeModel)
         {
-            ChallengeModel challengeToSolve = db.Challenges.Find(challengeModel.Challenge.ID);
+            ChallengeModel challengeToSolve = idb.Challenges.Find(challengeModel.Challenge.ID);
 
             ChallengeViewModel svm = new ChallengeViewModel();
 
@@ -119,7 +120,7 @@ namespace dot_not.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChallengeModel challengeModel = db.Challenges.Find(id);
+            ChallengeModel challengeModel = idb.Challenges.Find(id);
             if (challengeModel == null)
             {
                 return HttpNotFound();
@@ -132,9 +133,9 @@ namespace dot_not.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ChallengeModel challengeModel = db.Challenges.Find(id);
-            db.Challenges.Remove(challengeModel);
-            db.SaveChanges();
+            ChallengeModel challengeModel = idb.Challenges.Find(id);
+            idb.Challenges.Remove(challengeModel);
+            idb.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -142,7 +143,7 @@ namespace dot_not.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                idb.Dispose();
             }
             base.Dispose(disposing);
         }

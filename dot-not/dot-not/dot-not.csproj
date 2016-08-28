@@ -175,6 +175,7 @@
     </Compile>
     <Compile Include="Models\ChallengeModel.cs" />
     <Compile Include="Models\ChallengeViewModel.cs" />
+    <Compile Include="Models\IDotNotDBContext.cs" />
     <Compile Include="Models\DotNotDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

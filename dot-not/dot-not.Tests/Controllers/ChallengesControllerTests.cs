@@ -10,13 +10,13 @@ using System.Linq;
 using TestStack.FluentMVCTesting;
 using System.Net;
 
-namespace DotNotTests
+namespace dot_not.Tests
 {
     [TestClass]
     public class ChallengesControllerTests
     {
         private ChallengesController _controller;
-        private DotNotDBContext _dbContext;
+        private IDotNotDBContext _dbContext;
 
         [TestInitialize]
         public void Setup()
@@ -24,8 +24,8 @@ namespace DotNotTests
             // Create fake data
             var challenges = Builder<ChallengeModel>.CreateListOfSize(10).Build();
 
-            _dbContext = Substitute.For<DotNotDBContext>();
-            _dbContext.Challenges.Returns(new TestDbSet<ChallengeModel>(challenges));
+            _dbContext = Substitute.For<IDotNotDBContext>();
+            _dbContext.Challenges.Returns(x => new TestDbSet<ChallengeModel>(challenges));
 
             _controller = new ChallengesController(_dbContext);
         }

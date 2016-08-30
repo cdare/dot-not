@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNotTests
+namespace dot_not.Tests
 {
     public class TestDbSet<TEntity> : IDbSet<TEntity>
         where TEntity : class, new()

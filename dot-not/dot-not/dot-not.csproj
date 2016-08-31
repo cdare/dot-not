@@ -167,7 +167,10 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Controllers\ChallengesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -175,6 +178,7 @@
     </Compile>
     <Compile Include="Models\ChallengeModel.cs" />
     <Compile Include="Models\ChallengeViewModel.cs" />
+    <Compile Include="Models\AppUserModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\IDotNotDBContext.cs" />
     <Compile Include="Models\DotNotDBContext.cs" />

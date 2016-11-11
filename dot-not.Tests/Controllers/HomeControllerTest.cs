@@ -11,7 +11,7 @@ using NSubstitute;
 using FizzWare.NBuilder;
 using TestStack.FluentMVCTesting;
 
-namespace dot_not.Tests
+namespace dot_not.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

@@ -10,7 +10,7 @@ using System.Linq;
 using TestStack.FluentMVCTesting;
 using System.Net;
 
-namespace dot_not.Tests
+namespace dot_not.Tests.Controllers
 {
     [TestClass]
     public class ChallengesControllerTests
@@ -44,21 +44,7 @@ namespace dot_not.Tests
 
             _controller.WithCallTo(c => c.Submit(cm)).ShouldRenderView("Details").WithModel<ChallengeViewModel>(p => p.Success == true);
         }
-    
-
-        [TestMethod]
-        public void UserShouldRecievePointsForChallenge()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod]
-        public void UserChallengeShouldHaveAPassedStatus()
-        {
-            Assert.Fail();
-      
-        }
-
+   
 
 
     }

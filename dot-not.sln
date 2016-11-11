@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dot-not", "dot-not\dot-not.csproj", "{7CDEA8B2-ED1E-4823-AA5C-27F407709B04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dot-not.Tests", "dot-not.Tests\dot-not.Tests.csproj", "{FAAA583A-C776-4AF2-9885-C42DCA9E9383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dot-not.specs", "dot-not.specs\dot-not.specs.csproj", "{F125DC28-CAE6-455F-A1E3-0667CE0B65DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FAAA583A-C776-4AF2-9885-C42DCA9E9383}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAAA583A-C776-4AF2-9885-C42DCA9E9383}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAAA583A-C776-4AF2-9885-C42DCA9E9383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F125DC28-CAE6-455F-A1E3-0667CE0B65DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F125DC28-CAE6-455F-A1E3-0667CE0B65DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F125DC28-CAE6-455F-A1E3-0667CE0B65DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F125DC28-CAE6-455F-A1E3-0667CE0B65DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

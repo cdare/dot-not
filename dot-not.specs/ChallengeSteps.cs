@@ -1,4 +1,5 @@
 ﻿using System;
+using dot_not;
 using TechTalk.SpecFlow;
 
 namespace dot_not.specs
@@ -24,10 +25,29 @@ namespace dot_not.specs
             ScenarioContext.Current.Pending();
         }
         
-        [Then(@"I will get (.*) pointa")]
+        [Then(@"I will get (.*) points")]
         public void ThenIWillGetPointa(string p0)
         {
             ScenarioContext.Current.Pending();
         }
+
+        [Given(@"I am logged in")]
+        public void GivenIAmLoggedIn()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I view the challenge with ID (.*)")]
+        public void WhenIViewTheChallengeWithID(int p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"I will see the text ""(.*)"" on the page")]
+        public void ThenIWillSeeTheTextOnThePage(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }

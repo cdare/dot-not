@@ -102,6 +102,22 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("View Challenge Details", SourceLine=16)]
+        public virtual void ViewChallengeDetails()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Challenge Details", ((string[])(null)));
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.When("I view the challenge with ID 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then("I will see the text \"Challenge 1\" on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {

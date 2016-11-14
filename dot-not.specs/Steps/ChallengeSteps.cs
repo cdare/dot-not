@@ -2,7 +2,7 @@
 using dot_not;
 using TechTalk.SpecFlow;
 
-namespace dot_not.specs
+namespace dot_not.specs.Steps
 {
     [Binding]
     public class ChallengeSteps

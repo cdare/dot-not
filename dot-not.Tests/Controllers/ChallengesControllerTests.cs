@@ -31,13 +31,13 @@ namespace dot_not.Tests.Controllers
         }
 
         [TestMethod]
-        public void DetailsShouldReturnCorrectChallenge()
+        public void DetailsReturnsCorrectChallenge()
         {
             _controller.WithCallTo(c => c.Details(1)).ShouldRenderDefaultView().WithModel<ChallengeViewModel>(p => p.Challenge.ID == 1);
         }
 
         [TestMethod]
-        public void SubmittingFlagShouldSolveChallenge()
+        public void SubmittingFlagReturnsSuccess()
         {
             ChallengeViewModel cm = new ChallengeViewModel();
             cm.Challenge= _dbContext.Challenges.First();

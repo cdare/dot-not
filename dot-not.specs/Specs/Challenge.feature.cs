@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace dot_not.specs
+namespace dot_not.specs.Specs
 {
     using TechTalk.SpecFlow;
     
@@ -18,7 +18,7 @@ namespace dot_not.specs
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("Challenge", Description="\tUsers must complete a challenge to get points\r\n\tA challenge is completed by sumb" +
-        "itting a flag", SourceFile="Challenge.feature", SourceLine=0)]
+        "itting a flag", SourceFile="Specs\\Challenge.feature", SourceLine=0)]
     public partial class ChallengeFeature
     {
         

@@ -1,37 +1,47 @@
 ﻿using System;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using dot_not.specs.Helpers;
+using NUnit.Framework;
+using OpenQA.Selenium.Support.UI;
 
 namespace dot_not.specs.Steps
 {
     [Binding]
     public class HomePageSteps
     {
-        private IWebDriver driver;
+        private IWebDriver Driver { get; set; }
+        private WebDriverWait Wait { get; set; }
+        private HomePage homePage;
 
         [BeforeScenario()]
         public void Setup()
         {
-            driver = new FirefoxDriver();
+            this.Driver = new FirefoxDriver();
+            this.Wait = new WebDriverWait(this.Driver, TimeSpan.FromSeconds(30));
         }
 
         [AfterScenario()]
         public void TearDown()
         {
-            driver.Quit();
+            this.Driver.Quit();
         }
 
         [When(@"I browse to the home page")]
         public void WhenIBrowseToTheHomePage()
         {
-            ScenarioContext.Current.Pending();
+            HomePage homePage = new HomePage(this.Driver);
+            homePage.Navigate();
         }
         
         [Then(@"I should see ""(.*)"" on the screen")]
-        public void ThenIShouldSeeOnTheScreen(string p0)
+        public void ThenIShouldSeeOnTheScreen(string searchStr)
         {
-            ScenarioContext.Current.Pending();
+            Assert.IsTrue(this.Driver.PageSource.Contains(searchStr));
         }
+
+
     }
 }

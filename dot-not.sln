@@ -8,6 +8,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dot-not.Tests", "dot-not.Tests\dot-not.Tests.csproj", "{FAAA583A-C776-4AF2-9885-C42DCA9E9383}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dot-not.specs", "dot-not.specs\dot-not.specs.csproj", "{F125DC28-CAE6-455F-A1E3-0667CE0B65DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7CDEA8B2-ED1E-4823-AA5C-27F407709B04} = {7CDEA8B2-ED1E-4823-AA5C-27F407709B04}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23E433C5-59A5-4E81-97D9-45294AAC2454}"
+	ProjectSection(SolutionItems) = preProject
+		Grant.sql = Grant.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

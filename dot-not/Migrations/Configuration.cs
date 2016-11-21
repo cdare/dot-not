@@ -30,10 +30,10 @@ namespace dot_not.Migrations
             //    );
             //
 
-            for (int a = 0; a < 50; a = a + 1)
+            for (int a = 1; a < 20; a = a + 1)
             {
-                context.Challenges.Add(
-                    new ChallengeModel{Flag = Guid.NewGuid().ToString()}
+                context.Challenges.AddOrUpdate(
+                    new ChallengeModel{ID=a,Flag = Guid.NewGuid().ToString()}
                 );
             }
 

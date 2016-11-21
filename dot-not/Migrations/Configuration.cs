@@ -1,3 +1,5 @@
+using dot_not.Models;
+
 namespace dot_not.Migrations
 {
     using System;
@@ -27,6 +29,14 @@ namespace dot_not.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            for (int a = 0; a < 50; a = a + 1)
+            {
+                context.Challenges.Add(
+                    new ChallengeModel{Flag = Guid.NewGuid().ToString()}
+                );
+            }
+
         }
     }
 }

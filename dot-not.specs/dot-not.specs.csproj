@@ -104,9 +104,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Helpers\DotNotPage.cs" />
+    <Compile Include="Helpers\LoginPage.cs" />
+    <Compile Include="Helpers\RegisterPage.cs" />
     <Compile Include="Helpers\HomePage.cs" />
-    <Compile Include="Helpers\LoginHelpers.cs" />
     <Compile Include="Specs\Challenge.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,13 +118,7 @@
       <DependentUpon>HomePage.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\ChallengeSteps.cs" />
-    <Compile Include="Specs\Login.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Login.feature</DependentUpon>
-    </Compile>
     <Compile Include="Steps\HomePageSteps.cs" />
-    <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,10 +129,6 @@
     </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Specs\Login.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />

@@ -185,6 +185,10 @@
     <Compile Include="Migrations\201611110935498_InitialCreate.Designer.cs">
       <DependentUpon>201611110935498_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611211624315_FlagsHaveNoTitle.cs" />
+    <Compile Include="Migrations\201611211624315_FlagsHaveNoTitle.Designer.cs">
+      <DependentUpon>201611211624315_FlagsHaveNoTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Startup.cs" />
@@ -254,17 +258,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Challenges\Create.cshtml" />
-    <Content Include="Views\Challenges\Delete.cshtml" />
-    <Content Include="Views\Challenges\Details.cshtml" />
-    <Content Include="Views\Challenges\Edit.cshtml" />
-    <Content Include="Views\Challenges\Index.cshtml" />
-    <Content Include="Views\Challenges\Partials\Challenge2.cshtml" />
-    <Content Include="Views\Challenges\_Solve.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Challenges\SimpleChallenge1.cshtml" />
+    <Content Include="Views\Challenges\SimpleChallenge2.cshtml" />
+    <Content Include="Views\Challenges\SimpleChallenge3.cshtml" />
     <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -280,6 +280,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611110935498_InitialCreate.resx">
       <DependentUpon>201611110935498_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611211624315_FlagsHaveNoTitle.resx">
+      <DependentUpon>201611211624315_FlagsHaveNoTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

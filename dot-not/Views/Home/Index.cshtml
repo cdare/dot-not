@@ -12,30 +12,13 @@
         <h3>Web Challenges</h3>
     </div>
 </div>
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="challenges nav">
-                @foreach (var item in Model.Challenges)
-                {
-                    <li>@Html.ActionLink(item.Title, "Details", "Challenges", new { id = item.ID },null)</li>
-                }
-            </ul>
-        </div>
-    </div>
-<div class="row">
-<div class="col-md-12">
-    <h3>Mobile Challenges</h3>
-</div>
-</div>
 <div class="row">
     <div class="col-md-12">
         <ul class="challenges nav">
-          
-            <li><a href="#">Mobile 1</a></li>
-            <li><a href="#">Simple 1</a></li>
-            <li><a href="#">Simple 1</a></li>
-            <li><a href="#">Simple 1</a></li>
-            <li><a href="#">Simple 1</a></li>
+            @foreach (var item in Model.Challenges)
+            {
+                <li>@Html.ActionLink("Challenge"+item.ID, "Details", "Challenges", new { id = item.ID },null)</li>
+            }
         </ul>
     </div>
 </div>

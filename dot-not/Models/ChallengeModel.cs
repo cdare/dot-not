@@ -8,5 +8,12 @@ namespace dot_not.Models
         [Key]
         public int ID { get; set; }
         public String Flag { get; set; }
+
+        public String HexFlag()
+        {
+            return this.Flag.Replace("-", "");
+        }
+
+        
     }
 }

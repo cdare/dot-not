@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using dot_not.Models;
 using System.Numerics;
+using dot_not.Helpers;
 
 namespace dot_not.Controllers
 {
@@ -64,12 +65,12 @@ namespace dot_not.Controllers
             string key = "907b310b879c4526baeee72194424315";
             ViewBag.Key = key;
 
-            BigInteger hexFlag = BigInteger.Parse(challengeModel.Flag.Replace("-", ""), NumberStyles.HexNumber);
-            BigInteger hexKey = BigInteger.Parse(key, NumberStyles.HexNumber);
+            //BigInteger hexFlag = BigInteger.Parse(challengeModel.HexFlag(), NumberStyles.HexNumber);
+            //BigInteger hexKey = BigInteger.Parse(key, NumberStyles.HexNumber);
 
-            BigInteger pw = hexKey ^ hexFlag;
-            ViewBag.Password = pw.ToString("X");
-            challengeModel.Flag = hexFlag.ToString("X");
+            //BigInteger pw = hexKey ^ hexFlag;
+
+            ViewBag.Password = ChallengeHelper.XORHexStrings(challengeModel.HexFlag(), key);
             return View(challengeModel);
         }
 

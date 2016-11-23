@@ -30,22 +30,5 @@ namespace dot_not.Tests.Controllers
             _controller = new ChallengesController(_dbContext);
         }
 
-        [TestMethod]
-        public void DetailsReturnsCorrectChallenge()
-        {
-            _controller.WithCallTo(c => c.Details(1)).ShouldRenderDefaultView().WithModel<ChallengeViewModel>(p => p.Challenge.ID == 1);
-        }
-
-        [TestMethod]
-        public void SubmittingFlagReturnsSuccess()
-        {
-            ChallengeViewModel cm = new ChallengeViewModel();
-            cm.Challenge= _dbContext.Challenges.First();
-
-            _controller.WithCallTo(c => c.Submit(cm)).ShouldRenderView("Details").WithModel<ChallengeViewModel>(p => p.Success == true);
-        }
-   
-
-
     }
 }

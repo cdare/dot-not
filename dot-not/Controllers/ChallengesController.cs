@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using dot_not.Models;
+using System.Numerics;
 
 namespace dot_not.Controllers
 {
@@ -58,7 +60,16 @@ namespace dot_not.Controllers
         public ActionResult SimpleChallenge3()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(3);
-            challengeModel.Flag = Convert.ToBase64String(Encoding.UTF8.GetBytes(challengeModel.Flag));
+
+            string key = "907b310b879c4526baeee72194424315";
+            ViewBag.Key = key;
+
+            BigInteger hexFlag = BigInteger.Parse(challengeModel.Flag.Replace("-", ""), NumberStyles.HexNumber);
+            BigInteger hexKey = BigInteger.Parse(key, NumberStyles.HexNumber);
+
+            BigInteger pw = hexKey ^ hexFlag;
+            ViewBag.Password = pw.ToString("X");
+            challengeModel.Flag = hexFlag.ToString("X");
             return View(challengeModel);
         }
 

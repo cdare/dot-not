@@ -15,12 +15,52 @@
     <div>
         <h4>Simple Challenge 3</h4>
         <hr />
-        <p>Apparently leaving stuff in comments isn't very secure</p>
-        <!--Challenge loaded the flag is:->    
-        <!--@{@Model.Flag}-->
+        <form method="POST">
+            <dl>
+                <dt>
+                    <label for="password">What's the flag?</label>
+                </dt>
+                <dd>
+                    <input type="text" id="password" />
+                </dd>
+            </dl>
+
+            <input type="submit" id="submit_pass" onclick="return false;">
+        </form>
     </div>
-    <p>
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<script type="text/javascript">
+    document.getElementById("submit_pass").addEventListener("click", checkPass);
+
+    function checkPass() {
+
+        var pw = document.getElementById("password").value.replace(/-/g,"");
+        var key = "@ViewBag.Key";
+        var d = pw.length - key.length;
+        if (d < 0) {
+            var pad = "";
+            for (i = pw.length - 1; i < key.length-1; i++) {
+                pad = pad + "0";
+            }
+            pw = pw + pad;
+        }
+        out = "";
+        for (i = 0; i < key.length; i++) {
+            if (i % 2 != 0) {
+                var h = parseInt(key.substr(i - 1, 2), 16) ^ parseInt(pw.substr(i - 1, 2), 16);
+                var hstr = h.toString(16);
+                out = out + (h < 16 ? "0" + hstr : hstr);
+            }
+        }
+        if (out.toUpperCase() == "@ViewBag.Password") {
+            alert("Correct!");
+        } else {
+            alert("Try Again");
+        }
+        return false;
+    }
+</script>
 </body>
 </html>

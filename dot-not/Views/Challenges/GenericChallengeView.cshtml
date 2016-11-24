@@ -1,0 +1,22 @@
+﻿@model dot_not.Models.ChallengeModel
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <h4>@ViewBag.Title</h4>
+        <hr />
+        <p>@ViewBag.Error</p>
+        <p>@Model.Flag</p>
+        <!--@ViewBag.Comment -->
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

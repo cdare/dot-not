@@ -11,6 +11,7 @@ using System.Web.Mvc;
 using dot_not.Models;
 using System.Numerics;
 using dot_not.Helpers;
+using Microsoft.Ajax.Utilities;
 
 namespace dot_not.Controllers
 {
@@ -45,33 +46,66 @@ namespace dot_not.Controllers
             return View(cvm);
         }
 
-        public ActionResult SimpleChallenge1()
+        public ActionResult Challenge1()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(1);
             return View(challengeModel);
         }
 
-        public ActionResult SimpleChallenge2()
+        public ActionResult Challenge2()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(2);
             challengeModel.Flag = Convert.ToBase64String(Encoding.UTF8.GetBytes(challengeModel.Flag));
             return View(challengeModel);
         }
 
-        public ActionResult SimpleChallenge3()
+        public ActionResult Challenge3()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(3);
 
             string key = "907b310b879c4526baeee72194424315";
             ViewBag.Key = key;
 
-            //BigInteger hexFlag = BigInteger.Parse(challengeModel.HexFlag(), NumberStyles.HexNumber);
-            //BigInteger hexKey = BigInteger.Parse(key, NumberStyles.HexNumber);
-
-            //BigInteger pw = hexKey ^ hexFlag;
-
             ViewBag.Password = ChallengeHelper.XORHexStrings(challengeModel.HexFlag(), key);
             return View(challengeModel);
+        }
+
+        public ActionResult Challenge4()
+        {
+            ChallengeModel challengeModel = new ChallengeModel();
+            ViewBag.Title = "A Local Shop for Local People";
+            ViewBag.Comment = "flag_unsuccessful";
+            ViewBag.Error = "Sorry, Only accepting connections from localhost";
+            string ip = Request.Headers.Get("X-FORWARDED-FOR");
+            if (ip.IsNullOrWhiteSpace())
+            {
+                ip = Request.UserHostAddress;
+            }
+            if (ip == "127.0.0.1" || ip == "localhost")
+            {
+                ViewBag.Comment = "flag_success";
+                ViewBag.Error = "You did it!";
+                challengeModel = idb.Challenges.Find(4);
+            }
+            return View("GenericChallengeView", challengeModel);
+        }
+
+        public ActionResult Challenge5()
+        {
+            ChallengeModel challengeModel = new ChallengeModel();
+
+            ViewBag.Title = "Browser Compatability";
+            ViewBag.Comment = "flag_unsuccessful";
+            ViewBag.Error = "Sorry, this page only works with Internet Explorer 6";
+            string ua = Request.Headers.Get("User-Agent");
+    
+            if (ua.Contains("MSIE 6.0"))
+            {
+                ViewBag.Comment = "flag_success";
+                ViewBag.Error = "You did it!";
+                challengeModel = idb.Challenges.Find(5);
+            }
+            return View("GenericChallengeView", challengeModel);
         }
 
         protected override void Dispose(bool disposing)

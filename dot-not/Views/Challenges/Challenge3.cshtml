@@ -9,11 +9,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Simple Challenge 3</title>
+    <title>Challenge 3</title>
 </head>
 <body>
     <div>
-        <h4>Simple Challenge 3</h4>
+        <h4>Challenge 3</h4>
         <hr />
         <form method="POST">
             <dl>
@@ -28,10 +28,10 @@
             <input type="submit" id="submit_pass" onclick="return false;">
         </form>
     </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
-<script type="text/javascript">
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <script type="text/javascript">
     document.getElementById("submit_pass").addEventListener("click", checkPass);
 
     function checkPass() {
@@ -61,6 +61,6 @@
         }
         return false;
     }
-</script>
+    </script>
 </body>
 </html>

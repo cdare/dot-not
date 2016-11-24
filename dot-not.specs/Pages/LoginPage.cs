@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace dot_not.specs.Helpers
+namespace dot_not.specs.Pages
 {
-    class RegisterPage
+    class LoginPage
     {
         private readonly IWebDriver driver;
-        private readonly string url = "http://localhost/DotNot/Account/Register";
+        private readonly string url = "http://localhost/DotNot/Account/Login";
 
-        public RegisterPage(IWebDriver webDriver)
+        public LoginPage(IWebDriver webDriver)
         {
             this.driver = webDriver;
             PageFactory.InitElements(driver, this);
@@ -28,11 +28,8 @@ namespace dot_not.specs.Helpers
         [FindsBy(How = How.Id, Using = "Password")]
         public IWebElement Password { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ConfirmPassword")]
-        public IWebElement ConfirmPassword { get; set; }
-
-        [FindsBy(How = How.Id, Using = "Register")]
-        public IWebElement Register { get; set; }
+        [FindsBy(How = How.Id, Using = "LogIn")]
+        public IWebElement LogIn { get; set; }
 
         public void Navigate()
         {

@@ -17,8 +17,8 @@ namespace dot_not.specs.Specs
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Challenge", Description="\tUsers must complete a challenge to get points\r\n\tA challenge is completed by sumb" +
-        "itting a flag", SourceFile="Specs\\Challenge.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Challenge", Description="\tUsers must complete a challenge to get points\r\n\tA challenge is completed by find" +
+        "ing a flag", SourceFile="Specs\\Challenge.feature", SourceLine=0)]
     public partial class ChallengeFeature
     {
         
@@ -31,8 +31,8 @@ namespace dot_not.specs.Specs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Challenge", "\tUsers must complete a challenge to get points\r\n\tA challenge is completed by sumb" +
-                    "itting a flag", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Challenge", "\tUsers must complete a challenge to get points\r\n\tA challenge is completed by find" +
+                    "ing a flag", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,59 +63,120 @@ namespace dot_not.specs.Specs
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SumbitAFlag(string flag, string result, string points, string[] exampleTags)
+        [TechTalk.SpecRun.ScenarioAttribute("Challenge4IsSolved", SourceLine=4)]
+        public virtual void Challenge4IsSolved()
         {
-            string[] @__tags = new string[] {
-                    "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sumbit a flag", @__tags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Challenge4IsSolved", ((string[])(null)));
+#line 5
 this.ScenarioSetup(scenarioInfo);
+#line 6
+ testRunner.Given("the Challenge ID is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.Given(string.Format("I have entered {0} in the text box", flag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("the X-Forwarded-For header is 127.0.0.1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.When("I press sumbit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I send an HTTP request to Challenge 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then(string.Format("the result will be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 10
- testRunner.And(string.Format("I will get {0} points", points), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I should see \"flag_success\" in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Sumbit a flag, dea9f426-2d1b-484c-ad45-32bd64537ea8", new string[] {
-                "mytag"}, SourceLine=13)]
-        public virtual void SumbitAFlag_Dea9F426_2D1B_484C_Ad45_32Bd64537Ea8()
+        [TechTalk.SpecRun.ScenarioAttribute("Challenge4IsNotSolved", SourceLine=10)]
+        public virtual void Challenge4IsNotSolved()
         {
-            this.SumbitAFlag("dea9f426-2d1b-484c-ad45-32bd64537ea8", "success", "1", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Challenge4IsNotSolved", ((string[])(null)));
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("the Challenge ID is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.Given("the X-Forwarded-For header is 82.101.23.43", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.When("I send an HTTP request to Challenge 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("I should see \"flag_unsuccessful\" in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+            this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Sumbit a flag, 9ae24bd2-6f2c-4787-ae2d-d5185ad5b7ac", new string[] {
-                "mytag"}, SourceLine=13)]
-        public virtual void SumbitAFlag_9Ae24Bd2_6F2C_4787_Ae2D_D5185Ad5B7Ac()
+        [TechTalk.SpecRun.ScenarioAttribute("Challenge5IsSolved", SourceLine=16)]
+        public virtual void Challenge5IsSolved()
         {
-            this.SumbitAFlag("9ae24bd2-6f2c-4787-ae2d-d5185ad5b7ac", "fail", "2", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("View Challenge Details", SourceLine=16)]
-        public virtual void ViewChallengeDetails()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Challenge Details", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Challenge5IsSolved", ((string[])(null)));
 #line 17
 this.ScenarioSetup(scenarioInfo);
 #line 18
- testRunner.Given("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the Challenge ID is 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 19
- testRunner.When("I view the challenge with ID 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("the User-Agent header is \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; T312" +
+                    "461\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.Then("I will see the text \"Challenge 1\" on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I send an HTTP request to Challenge 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then("I should see \"flag_success\" in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Challenge5IsNotSolved", SourceLine=22)]
+        public virtual void Challenge5IsNotSolved()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Challenge5IsNotSolved", ((string[])(null)));
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 24
+ testRunner.Given("the Challenge ID is 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+ testRunner.When("I send an HTTP request to Challenge 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.Then("I should see \"flag_unsuccessful\" in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void HeaderChallengeIsSolved(string id, string name, string value, string result, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("HeaderChallengeIsSolved", exampleTags);
+#line 28
+this.ScenarioSetup(scenarioInfo);
+#line 29
+ testRunner.Given("the Challenge ID is {id}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 30
+ testRunner.And("the {name} header is {value}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.When("I send an HTTP request to Challenge {id}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("I should see \"{result}\" in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("HeaderChallengeIsSolved, Variant 0", SourceLine=35)]
+        public virtual void HeaderChallengeIsSolved_Variant0()
+        {
+            this.HeaderChallengeIsSolved("4", "X-Forwarded-For", "82.101.23.43", "flag_unsuccessful", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("HeaderChallengeIsSolved, Variant 1", SourceLine=35)]
+        public virtual void HeaderChallengeIsSolved_Variant1()
+        {
+            this.HeaderChallengeIsSolved("4", "X-Forwarded-For", "127.0.0.1", "flag_success", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("HeaderChallengeIsSolved, Variant 2", SourceLine=35)]
+        public virtual void HeaderChallengeIsSolved_Variant2()
+        {
+            this.HeaderChallengeIsSolved("5", "User-Agent", "Mozilla/4.0", "flag_unsuccessful", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("HeaderChallengeIsSolved, Variant 3", SourceLine=35)]
+        public virtual void HeaderChallengeIsSolved_Variant3()
+        {
+            this.HeaderChallengeIsSolved("5", "User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; T312461", "flag_success", ((string[])(null)));
+#line hidden
         }
         
         [TechTalk.SpecRun.TestRunCleanup()]

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace dot_not.specs.Helpers
+namespace dot_not.specs.Pages
 {
-    class HomePage
+    class ChallengePage
     {
         private readonly IWebDriver driver;
-        private readonly string url = "http://localhost/DotNot";
+        
+        public string url { get; set; }
 
-        public HomePage(IWebDriver webDriver)
+        public ChallengePage(IWebDriver webDriver)
         {
             this.driver = webDriver;
             PageFactory.InitElements(driver, this);

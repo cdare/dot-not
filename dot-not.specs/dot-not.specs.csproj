@@ -35,6 +35,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BasicFormatsForCore, Version=2.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore2.1.0.0\lib\net40\BasicFormatsForCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BCMakeCert, Version=2.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore2.1.0.0\lib\net40\BCMakeCert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CertMaker, Version=4.5.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore2.1.0.0\lib\net40\CertMaker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FiddlerCore4, Version=4.6.2.0, Culture=neutral, PublicKeyToken=67cb91587178ac5a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FiddlerCore2.1.0.0\lib\net40\FiddlerCore4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
@@ -104,9 +120,10 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Helpers\LoginPage.cs" />
-    <Compile Include="Helpers\RegisterPage.cs" />
-    <Compile Include="Helpers\HomePage.cs" />
+    <Compile Include="Pages\ChallengePage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\RegisterPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Specs\Challenge.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +137,7 @@
     <Compile Include="Steps\ChallengeSteps.cs" />
     <Compile Include="Steps\HomePageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\SharedSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

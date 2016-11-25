@@ -120,6 +120,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\AccountChallengePage.cs" />
     <Compile Include="Pages\ChallengePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\RegisterPage.cs" />
@@ -134,6 +135,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomePage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Specs\AccountChallenge.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountChallenge.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\AccountChallengesSteps.cs" />
     <Compile Include="Steps\HttpChallengeSteps.cs" />
     <Compile Include="Steps\HomePageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +165,10 @@
     <None Include="Specs\HomePage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HomePage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Specs\AccountChallenge.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccountChallenge.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

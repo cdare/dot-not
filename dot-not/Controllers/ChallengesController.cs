@@ -46,12 +46,14 @@ namespace dot_not.Controllers
             return View(cvm);
         }
 
+        //Comments
         public ActionResult Challenge1()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(1);
             return View(challengeModel);
         }
 
+        //Base64 Comments
         public ActionResult Challenge2()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(2);
@@ -59,6 +61,7 @@ namespace dot_not.Controllers
             return View(challengeModel);
         }
 
+        //JS Reverse Engineer
         public ActionResult Challenge3()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(3);
@@ -70,6 +73,7 @@ namespace dot_not.Controllers
             return View(challengeModel);
         }
 
+        //Header Manipulation
         public ActionResult Challenge4()
         {
             ChallengeModel challengeModel = new ChallengeModel();
@@ -90,6 +94,7 @@ namespace dot_not.Controllers
             return View("GenericChallengeView", challengeModel);
         }
 
+        //Header Manipulation 2
         public ActionResult Challenge5()
         {
             ChallengeModel challengeModel = new ChallengeModel();

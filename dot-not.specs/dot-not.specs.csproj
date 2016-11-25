@@ -124,26 +124,25 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\RegisterPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
-    <Compile Include="Specs\Challenge.feature.cs">
+    <Compile Include="Specs\HttpChallenge.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Challenge.feature</DependentUpon>
+      <DependentUpon>HttpChallenge.feature</DependentUpon>
     </Compile>
     <Compile Include="Specs\HomePage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HomePage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Steps\ChallengeSteps.cs" />
+    <Compile Include="Steps\HttpChallengeSteps.cs" />
     <Compile Include="Steps\HomePageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\SharedSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Specs\Challenge.feature">
+    <None Include="Specs\HttpChallenge.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Challenge.feature.cs</LastGenOutput>
+      <LastGenOutput>HttpChallenge.feature.cs</LastGenOutput>
     </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

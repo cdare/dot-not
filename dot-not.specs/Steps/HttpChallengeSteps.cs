@@ -13,26 +13,24 @@ using TechTalk.SpecFlow;
 namespace dot_not.specs.Steps
 {
     [Binding]
-    public class ChallengeSteps
+    public class HttpChallengeSteps
     {
-        private IWebDriver Driver { get; set; }
-        private WebDriverWait Wait { get; set; }
-        private ChallengePage challengePage;
+   
         private string responseText;
         private HttpWebRequest request;
 
         [BeforeScenario()]
         public void Setup()
         {
-            this.Driver = new FirefoxDriver();
-            this.Wait = new WebDriverWait(this.Driver, TimeSpan.FromSeconds(30));
+
         }
-    
+
         [AfterScenario()]
         public void TearDown()
         {
-            this.Driver.Quit();
+            
         }
+        
 
         [Given(@"the Challenge ID is (.*)")]
         public void GivenTheChallengeIdIs(string id)
@@ -51,14 +49,6 @@ namespace dot_not.specs.Steps
             {
                 request.Headers.Add(name, value);
             }
-        }
-
-        [When(@"I browse to Challenge (.*)")]
-        public void WhenIBrowseToChallenge(string id)
-        {
-            ChallengePage challengePage = new ChallengePage(this.Driver);
-            challengePage.url = "http://localhost/DotNot/Challenges/Challenge"+id;
-            challengePage.Navigate();
         }
 
         [When(@"I send an HTTP request to Challenge (.*)")]

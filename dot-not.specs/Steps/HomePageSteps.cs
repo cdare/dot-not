@@ -35,6 +35,12 @@ namespace dot_not.specs.Steps
             HomePage homePage = new HomePage(this.Driver);
             homePage.Navigate();
         }
-        
+
+        public void ThenIShouldSeeOnTheScreen(string searchStr)
+        {
+            Assert.IsTrue(this.Driver.PageSource.Contains(searchStr));
+        }
+
+
     }
 }

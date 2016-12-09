@@ -17,8 +17,8 @@ namespace dot_not.specs.Specs
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("AccountChallenges", SourceFile="Specs\\AccountChallenge.feature", SourceLine=0)]
-    public partial class AccountChallengesFeature
+    [TechTalk.SpecRun.FeatureAttribute("XSSChallenges", SourceFile="Specs\\AccountChallenge.feature", SourceLine=0)]
+    public partial class XSSChallengesFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,7 +30,7 @@ namespace dot_not.specs.Specs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AccountChallenges", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "XSSChallenges", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -61,32 +61,32 @@ namespace dot_not.specs.Specs
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void BypassDirectObjectReference(string id, string comment, string[] exampleTags)
+        public virtual void ExploitSimplReflectedXss(string id, string comment, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bypass Direct Object Reference", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("ExploitSimplReflectedXss", exampleTags);
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.Given(string.Format("the admin ID is {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am on the search page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.When(string.Format("I browse to /account/{0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I search for <value>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
- testRunner.Then(string.Format("I the flag comment will be {0}", comment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("<value> will be in the HTML of rh", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Bypass Direct Object Reference, 1", SourceLine=9)]
-        public virtual void BypassDirectObjectReference_1()
+        [TechTalk.SpecRun.ScenarioAttribute("ExploitSimplReflectedXss, 1", SourceLine=9)]
+        public virtual void ExploitSimplReflectedXss_1()
         {
-            this.BypassDirectObjectReference("1", "success", ((string[])(null)));
+            this.ExploitSimplReflectedXss("1", "success", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Bypass Direct Object Reference, 2", SourceLine=9)]
-        public virtual void BypassDirectObjectReference_2()
+        [TechTalk.SpecRun.ScenarioAttribute("ExploitSimplReflectedXss, 2", SourceLine=9)]
+        public virtual void ExploitSimplReflectedXss_2()
         {
-            this.BypassDirectObjectReference("2", "unsuccessful", ((string[])(null)));
+            this.ExploitSimplReflectedXss("2", "unsuccessful", ((string[])(null)));
 #line hidden
         }
         

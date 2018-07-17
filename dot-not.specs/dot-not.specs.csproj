@@ -120,37 +120,10 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Pages\AccountChallengePage.cs" />
-    <Compile Include="Pages\ChallengePage.cs" />
-    <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="Pages\RegisterPage.cs" />
-    <Compile Include="Pages\HomePage.cs" />
-    <Compile Include="Specs\HttpChallenge.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HttpChallenge.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Specs\HomePage.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HomePage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Specs\AccountChallenge.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountChallenge.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Steps\AccountChallengesSteps.cs" />
-    <Compile Include="Steps\HttpChallengeSteps.cs" />
-    <Compile Include="Steps\HomePageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Specs\HttpChallenge.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>HttpChallenge.feature.cs</LastGenOutput>
-    </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -162,20 +135,17 @@
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Specs\HomePage.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>HomePage.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Specs\AccountChallenge.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AccountChallenge.feature.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dot-not\dot-not.csproj">
       <Project>{7cdea8b2-ed1e-4823-aa5c-27f407709b04}</Project>
       <Name>dot-not</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Specs\" />
+    <Folder Include="Steps\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

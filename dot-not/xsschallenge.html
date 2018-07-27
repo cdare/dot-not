@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Challenge 3</title>
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+<link href="Content/site.css" rel="stylesheet"/>
+
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+<script src="Scripts/modernizr-2.8.3.js"></script>
+
+    <script src="Scripts/jquery-1.10.2.js"></script>
+<script src="Scripts/jquery-3.1.1.js"></script>
+<style>
+#caption-photo{width:500px;position: relative;}
+#caption-photo img{width:100%}
+#caption-photo .caption{position:absolute;bottom:10px;left:50%;transform: translate(-50%, 0);}
+#caption-photo .caption p{
+	font-family:"Comic Sans MS","Comic Sans", sans-serif;
+	font-size:28pt;
+	font-weight:bold;
+	color:#ff66cc;
+}
+</style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="Content/img/justeat-white.png" class="navbar-brand"/>
+                <h1>.NOT</h1>
+            </div>
+            <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/Account/Register" id="registerLink">Register</a></li>
+        <li><a href="/Account/Login" id="loginLink">Log in</a></li>
+    </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="belowHeader">
+    </div>
+    <div class="container body-content">
+    <div>
+        <h4>Challenge 3</h4>
+        <hr />
+        <form method="POST">
+            <dl>
+                <dt>
+                    <label for="caption-value">Caption the Image</label>
+                </dt>
+                <dd>
+                    <input type="text" id="caption-value" />
+                </dd>
+            </dl>
+
+            <input type="submit" id="submit_caption" onclick="return false;">
+        </form>
+		<hr />
+		<div id="caption-photo">
+		<div class="caption"><p id="caption-text"></p></div>
+		<img src="Content/images/caption.jpg"/>
+		</div>
+		<hr />
+    </div>
+    <p>
+    </p>
+   <a href="/Challenges">Back to List</a>
+    <script type="text/javascript">
+		document.getElementById("submit_caption").addEventListener("click", doCaption);
+
+		function doCaption() {
+			text = document.getElementById("caption-value").value;
+			document.getElementById("caption-text").innerText = text;
+		}
+
+    
+    </script>
+</body>
+</html>
+        <hr />
+        <footer>
+            <p>&copy; 2018 - JUST EAT Summer CTF</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

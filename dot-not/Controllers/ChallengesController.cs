@@ -113,6 +113,25 @@ namespace dot_not.Controllers
             return View("GenericChallengeView", challengeModel);
         }
 
+        //XSS 1
+        public ActionResult Challenge6()
+        {
+            ChallengeModel challengeModel = new ChallengeModel();
+
+            ViewBag.Title = "Caption Competition";
+            ViewBag.Comment = "flag_unsuccessful";
+            ViewBag.Error = "Sorry, this page only works with Internet Explorer 6";
+            string ua = Request.Headers.Get("User-Agent");
+
+            if (ua.Contains("MSIE 6.0"))
+            {
+                ViewBag.Comment = "flag_success";
+                ViewBag.Error = "You did it!";
+                challengeModel = idb.Challenges.Find(5);
+            }
+            return View("GenericChallengeView", challengeModel);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -21,7 +21,6 @@ namespace dot_not.Controllers
 
         public ActionResult Index()
         {
-            model.Challenges = idb.Challenges.ToList();
             return View(model);
         }
 

@@ -14,6 +14,7 @@ namespace dot_not.Models
     {
         public string FirstName { get; set; }
 
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long RowID { get; set; }
 

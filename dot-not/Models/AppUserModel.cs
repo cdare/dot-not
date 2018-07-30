@@ -17,6 +17,8 @@ namespace dot_not.Models
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long RowID { get; set; }
+    
+        public virtual ICollection<ChallengeModel> Challenges { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {

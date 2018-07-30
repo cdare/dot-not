@@ -3,6 +3,7 @@ namespace dot_not.Models
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
 
     public class DotNotDBContext : IdentityDbContext<AppUser>, IDotNotDBContext
@@ -18,7 +19,5 @@ namespace dot_not.Models
         {
             return new DotNotDBContext();
         }
-
-
     }
 }

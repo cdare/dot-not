@@ -181,6 +181,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\IdentityController.cs" />
     <Compile Include="Helpers\ChallengeHelper.cs" />
     <Compile Include="Identity\AppUserManager.cs" />
@@ -191,6 +192,10 @@
     <Compile Include="Migrations\201611211624315_FlagsHaveNoTitle.cs" />
     <Compile Include="Migrations\201611211624315_FlagsHaveNoTitle.Designer.cs">
       <DependentUpon>201611211624315_FlagsHaveNoTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301600246_with flags.cs" />
+    <Compile Include="Migrations\201807301600246_with flags.Designer.cs">
+      <DependentUpon>201807301600246_with flags.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppUserModel.cs" />
@@ -270,6 +275,16 @@
     <Content Include="Views\Challenges\Challenge6.cshtml" />
     <Content Include="Views\Identity\Login.cshtml" />
     <Content Include="Views\Identity\Register.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Account\Delete.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -288,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611211624315_FlagsHaveNoTitle.resx">
       <DependentUpon>201611211624315_FlagsHaveNoTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301600246_with flags.resx">
+      <DependentUpon>201807301600246_with flags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

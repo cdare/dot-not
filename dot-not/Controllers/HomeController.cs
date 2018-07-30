@@ -24,5 +24,9 @@ namespace dot_not.Controllers
             return View(model);
         }
 
+        public ActionResult Leaderboard()
+        {
+            return View(model);
+        }
     }
 }

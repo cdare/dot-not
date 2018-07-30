@@ -21,9 +21,11 @@ namespace dot_not.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IDotNotDBContext idb = new DotNotDBContext();
 
-        public IdentityController()
+        public IdentityController(IDotNotDBContext context)
         {
+            idb = context;
         }
 
         public IdentityController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -143,6 +145,26 @@ namespace dot_not.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Submit(ChallengeViewModel challengeModel)
+        {
+            ChallengeModel challengeToSolve = idb.Challenges.Find(challengeModel.Challenge.ID);
+            ChallengeViewModel svm = new ChallengeViewModel();
+            if (challengeModel.Challenge.Flag == challengeToSolve.Flag)
+            {
+                svm.Success = true;
+
+                //Update user model to say they solved challenge
+                var user = UserManager.FindById(User.Identity.GetUserId());
+
+
+            }
+
+            return View("Details", svm);
         }
 
         private IAuthenticationManager AuthenticationManager

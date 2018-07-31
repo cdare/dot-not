@@ -47,14 +47,14 @@ namespace dot_not.Controllers
         }
 
         //Comments
-        public ActionResult Challenge1()
+        public ActionResult Basic1()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(1);
             return View(challengeModel);
         }
 
         //Base64 Comments
-        public ActionResult Challenge2()
+        public ActionResult Spoofing1()
         {
             ChallengeModel challengeModel = idb.Challenges.Find(2);
             challengeModel.Flag = Convert.ToBase64String(Encoding.UTF8.GetBytes(challengeModel.Flag));
@@ -62,9 +62,9 @@ namespace dot_not.Controllers
         }
 
         //JS Reverse Engineer
-        public ActionResult Challenge3()
+        public ActionResult Reversing1()
         {
-            ChallengeModel challengeModel = idb.Challenges.Find(3);
+            ChallengeModel challengeModel = idb.Challenges.Find(10);
 
             string key = "907b310b879c4526baeee72194424315";
             ViewBag.Key = key;
@@ -74,7 +74,7 @@ namespace dot_not.Controllers
         }
 
         //Header Manipulation
-        public ActionResult Challenge4()
+        public ActionResult Spoofing2()
         {
             ChallengeModel challengeModel = new ChallengeModel();
             ViewBag.Title = "A Local Shop for Local People";
@@ -89,13 +89,13 @@ namespace dot_not.Controllers
             {
                 ViewBag.Comment = "flag_success";
                 ViewBag.Error = "You did it!";
-                challengeModel = idb.Challenges.Find(4);
+                challengeModel = idb.Challenges.Find(3);
             }
             return View("GenericChallengeView", challengeModel);
         }
 
         //Header Manipulation 2
-        public ActionResult Challenge5()
+        public ActionResult Spoofing3()
         {
             ChallengeModel challengeModel = new ChallengeModel();
 
@@ -108,7 +108,7 @@ namespace dot_not.Controllers
             {
                 ViewBag.Comment = "flag_success";
                 ViewBag.Error = "You did it!";
-                challengeModel = idb.Challenges.Find(5);
+                challengeModel = idb.Challenges.Find(4);
             }
             return View("GenericChallengeView", challengeModel);
         }
@@ -127,7 +127,7 @@ namespace dot_not.Controllers
             {
                 ViewBag.Comment = "flag_success";
                 ViewBag.Error = "You did it!";
-                challengeModel = idb.Challenges.Find(5);
+                challengeModel = idb.Challenges.Find(6);
             }
             return View("GenericChallengeView", challengeModel);
         }

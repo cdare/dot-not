@@ -30,13 +30,12 @@ namespace dot_not.Migrations
             //    );
             //
 
-            for (int a = 1; a < 20; a = a + 1)
-            {
-                context.Challenges.AddOrUpdate(
-                    new ChallengeModel{ID=a,Flag = Guid.NewGuid().ToString()}
-                );
-            }
-
+            context.Challenges.Add(new ChallengeModel { ID = 1, Flag = Guid.NewGuid().ToString(), Points=1, Name="Basic 1" });
+            context.Challenges.Add(new ChallengeModel { ID = 2, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 1" });
+            context.Challenges.Add(new ChallengeModel { ID = 3, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 2" });
+            context.Challenges.Add(new ChallengeModel { ID = 4, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 3" });
+            context.Challenges.Add(new ChallengeModel { ID = 5, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "XSS 1" });
+            context.Challenges.Add(new ChallengeModel { ID = 10, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Reversing 1" });
         }
     }
 }

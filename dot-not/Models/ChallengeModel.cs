@@ -7,6 +7,9 @@ namespace dot_not.Models
     {
         [Key]
         public int ID { get; set; }
+
+        public String Name { get; set; }
+
         public String Flag { get; set; }
 
         public int Points { get; set; }

@@ -12,6 +12,7 @@ namespace dot_not
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            ConfigureRoles();
         }
     }
 }

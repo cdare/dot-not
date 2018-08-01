@@ -6,7 +6,9 @@ namespace dot_not.Models
     public class ChallengeModel
     {
         [Key]
-        public int ID { get; set; }
+        public Guid ID { get; set; }
+
+        public int ChallengeID { get; set; }
 
         public String Name { get; set; }
 
@@ -17,6 +19,12 @@ namespace dot_not.Models
         public String HexFlag()
         {
             return this.Flag.Replace("-", "");
+        }
+
+        public String ResetFlag()
+        {
+            this.Flag = Guid.NewGuid().ToString();
+            return this.Flag;
         }
 
         

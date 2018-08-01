@@ -23,6 +23,10 @@ namespace dot_not.Controllers
         private ApplicationUserManager _userManager;
         private IDotNotDBContext idb = new DotNotDBContext();
 
+        public IdentityController()
+        {
+
+        }
         public IdentityController(IDotNotDBContext context)
         {
             idb = context;
@@ -125,7 +129,7 @@ namespace dot_not.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    UserManager.AddToRole(user.Id, "User");
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

@@ -197,6 +197,14 @@
     <Compile Include="Migrations\201807301600246_with flags.Designer.cs">
       <DependentUpon>201807301600246_with flags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807311456595_UpdateChallenges.cs" />
+    <Compile Include="Migrations\201807311456595_UpdateChallenges.Designer.cs">
+      <DependentUpon>201807311456595_UpdateChallenges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011438147_UpdateToChallenges.cs" />
+    <Compile Include="Migrations\201808011438147_UpdateToChallenges.Designer.cs">
+      <DependentUpon>201808011438147_UpdateToChallenges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppUserModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -252,7 +260,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -268,9 +278,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <Content Include="Views\Challenges\Challenge1.cshtml" />
-    <Content Include="Views\Challenges\Challenge2.cshtml" />
-    <Content Include="Views\Challenges\Challenge3.cshtml" />
+    <Content Include="Views\Challenges\Basic1.cshtml" />
+    <Content Include="Views\Challenges\Basic2.cshtml" />
+    <Content Include="Views\Challenges\Reversing1.cshtml" />
     <Content Include="Views\Challenges\GenericChallengeView.cshtml" />
     <Content Include="Views\Challenges\Challenge6.cshtml" />
     <Content Include="Views\Identity\Login.cshtml" />
@@ -306,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807301600246_with flags.resx">
       <DependentUpon>201807301600246_with flags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807311456595_UpdateChallenges.resx">
+      <DependentUpon>201807311456595_UpdateChallenges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011438147_UpdateToChallenges.resx">
+      <DependentUpon>201808011438147_UpdateToChallenges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

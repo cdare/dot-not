@@ -30,12 +30,13 @@ namespace dot_not.Migrations
             //    );
             //
 
-            context.Challenges.Add(new ChallengeModel { ID = 1, Flag = Guid.NewGuid().ToString(), Points=1, Name="Basic 1" });
-            context.Challenges.Add(new ChallengeModel { ID = 2, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 1" });
-            context.Challenges.Add(new ChallengeModel { ID = 3, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 2" });
-            context.Challenges.Add(new ChallengeModel { ID = 4, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 3" });
-            context.Challenges.Add(new ChallengeModel { ID = 5, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "XSS 1" });
-            context.Challenges.Add(new ChallengeModel { ID = 10, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Reversing 1" });
+            context.Challenges.AddOrUpdate(new ChallengeModel { ID = Guid.NewGuid(), ChallengeID = 1, Flag = Guid.NewGuid().ToString(), Points=1, Name="Basic 1" });
+            context.Challenges.AddOrUpdate(new ChallengeModel { ID = Guid.NewGuid(), ChallengeID = 2, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 1" });
+            context.Challenges.AddOrUpdate(new ChallengeModel { ID = Guid.NewGuid(), ChallengeID = 3, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 2" });
+            context.Challenges.AddOrUpdate(new ChallengeModel { ID = Guid.NewGuid(), ChallengeID = 4, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Spoofing 3" });
+            context.Challenges.AddOrUpdate(new ChallengeModel { ID = Guid.NewGuid(), ChallengeID = 5, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "XSS 1" });
+            context.Challenges.AddOrUpdate(new ChallengeModel { ID = Guid.NewGuid(), ChallengeID = 10, Flag = Guid.NewGuid().ToString(), Points = 1, Name = "Reversing 1" });
+            context.SaveChanges();
         }
     }
 }

@@ -10,6 +10,7 @@ using dot_not.Models;
 
 namespace dot_not.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private IDotNotDBContext idb = new DotNotDBContext();
@@ -27,6 +28,8 @@ namespace dot_not.Controllers
         {
             return View(idb.Challenges.ToList());
         }
+
+
 
         // GET: Admin/Details/5
         public ActionResult Details(int? id)
@@ -64,6 +67,23 @@ namespace dot_not.Controllers
             }
 
             return View(challengeModel);
+        }
+
+        // POST: Admin/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+   
+        public ActionResult ResetFlags()
+        {
+            foreach( ChallengeModel c in db.Challenges)
+            {
+                c.ResetFlag();
+                db.Entry(c).State = System.Data.Entity.EntityState.Modified;
+
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
         // GET: Admin/Edit/5
@@ -119,6 +139,7 @@ namespace dot_not.Controllers
         {
             ChallengeModel challengeModel = idb.Challenges.Find(id);
             idb.Challenges.Remove(challengeModel);
+            db.Entry(challengeModel).State = System.Data.Entity.EntityState.Deleted;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

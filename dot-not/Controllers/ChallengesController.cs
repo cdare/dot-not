@@ -29,23 +29,11 @@ namespace dot_not.Controllers
             idb = context;
         }
 
-        // GET: Challenges/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Index()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ChallengeModel challengeModel = idb.Challenges.Find(id);
-            if (challengeModel == null)
-            {
-                return HttpNotFound();
-            }
-            ChallengeViewModel cvm = new ChallengeViewModel();
-            cvm.Challenge = challengeModel;
-
-            return View(cvm);
+            return RedirectToAction("Index", "Home");
         }
+
 
         //Comments
         public ActionResult Basic1()

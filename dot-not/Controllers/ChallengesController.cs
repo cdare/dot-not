@@ -121,6 +121,8 @@ namespace dot_not.Controllers
             return View("GenericChallengeView", challengeModel);
         }
 
+        public ActionResult
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -33,8 +33,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="Content/img/justeat-white.png" class="navbar-brand"/>
-                <h1>.NOT</h1>
+				<a class="navbar-brand" href="#">
+					<img src="Content/images/NEX-MasterLogo-White.png" width="65"/>
+				</a>
+                <h1>Developer CTF</h1>
             </div>
             <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -80,6 +82,23 @@
 			text = document.getElementById("caption-value").value;
 			document.getElementById("caption-text").innerText = text;
 		}
+		
+		window.addEventListener("message", function(event) {
+
+		  if (!window.location.origin) {
+			window.location.origin = window.location.protocol + "//" 
+				+ window.location.hostname 
+				+ (window.location.port ? ':' + window.location.port: '');
+		  }
+
+		  if (event.origin == window.location.origin && event.data == "success") {
+			userOpenedAlert = true;
+			levelSolved();
+			return;
+		  }
+		  
+		  updateURLBar('1', event.data);
+		}, false);
 
     
     </script>
@@ -87,7 +106,7 @@
 </html>
         <hr />
         <footer>
-            <p>&copy; 2018 - JUST EAT Summer CTF</p>
+
         </footer>
     </div>
     

@@ -12,6 +12,11 @@ namespace dot_not.Models
 {
     public class AppUser : IdentityUser
     {
+
+        public AppUser()
+        {
+            this.Challenges = new HashSet<ChallengeModel>();
+        }
         public string FirstName { get; set; }
 
 

@@ -151,26 +151,6 @@ namespace dot_not.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Submit(ChallengeViewModel challengeModel)
-        {
-            ChallengeModel challengeToSolve = idb.Challenges.Find(challengeModel.Challenge.ID);
-            ChallengeViewModel svm = new ChallengeViewModel();
-            if (challengeModel.Challenge.Flag == challengeToSolve.Flag)
-            {
-                svm.Success = true;
-
-                //Update user model to say they solved challenge
-                var user = UserManager.FindById(User.Identity.GetUserId());
-
-
-            }
-
-            return View("Details", svm);
-        }
-
         private IAuthenticationManager AuthenticationManager
         {
             get

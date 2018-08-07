@@ -1,0 +1,25 @@
+﻿@model dot_not.Models.FlagFormViewModel
+
+<section id="loginForm">
+    @using (Html.BeginForm("SubmitFlag", "Challenge", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+        @Html.AntiForgeryToken()
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Flag, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Flag, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => Model.Flag, "", new { @class = "text-danger" })
+                @Html.Hidden("ChallengeID", Model.ChallengeID)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Log in" class="btn btn-default" id="LogIn" />
+            </div>
+        </div>
+    }
+
+</section>

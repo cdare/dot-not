@@ -1,0 +1,36 @@
+﻿@model dot_not.Models.ChallengeViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <section id="loginForm">
+            @using (Html.BeginForm("SubmitFlag", "Challenges", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+
+                @Html.AntiForgeryToken()
+                <hr />
+               
+                <div class="form-group">
+                    <h4>Submit Flag for Challenge @Model.ChallengeNiceID</h4>
+                    @Html.LabelFor(m => m.Flag, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Flag, new { @class = "form-control" })
+                        <p class="text-danger">@Html.DisplayFor(m => m.HelpText)</p>
+                        @Html.Hidden("ChallengeID", Model.ChallengeID)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit Flag" class="btn btn-default" id="Submit-Flag" />
+                    </div>
+                </div>
+            }
+
+        </section>
+        </div>
+</body>
+</html>

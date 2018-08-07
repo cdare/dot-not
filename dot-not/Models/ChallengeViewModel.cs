@@ -13,9 +13,12 @@ namespace dot_not.Models
             this.FailMessage = "Sorry that's not the correct flag, please try again.";
         }
 
-        public ChallengeModel Challenge { get; set; }
+        public string ChallengeID { get; set; }
+        public string ChallengeNiceID { get; set; }
+        public string Flag { get; set; }
         public bool Success { get; set; }
         public string SuccessMessage { get; set; }
         public string FailMessage { get; set; }
+        public string HelpText { get; set; }
     }
 }

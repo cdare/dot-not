@@ -1,4 +1,4 @@
-﻿@model dot_not.Models.ChallengeModel
+﻿@model dot_not.Models.ChallengeViewModel
 <!DOCTYPE html>
 <!DOCTYPE html>
 
@@ -12,9 +12,10 @@
         <h4>@ViewBag.Title</h4>
         <hr />
         <p>@ViewBag.Error</p>
-        <p>@Model.Flag</p>
+        <p>@Model.Challenge.Flag</p>
         <!--@ViewBag.Comment -->
     </div>
+    {@Html.Partial("_FlagForm", Model.Challenge)}
     <p>
         @Html.ActionLink("Back to List", "Index")
     </p>

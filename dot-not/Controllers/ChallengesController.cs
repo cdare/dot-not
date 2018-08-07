@@ -12,6 +12,9 @@ using dot_not.Models;
 using System.Numerics;
 using dot_not.Helpers;
 using Microsoft.Ajax.Utilities;
+using dot_not.Identity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace dot_not.Controllers
 {
@@ -21,12 +24,16 @@ namespace dot_not.Controllers
  
         private IDotNotDBContext idb = new DotNotDBContext();
         private DotNotDBContext db = new DotNotDBContext();
+        protected UserManager<AppUser> userManager { get; set; }
+
 
         public ChallengesController() { }
 
         public ChallengesController(IDotNotDBContext context)
         {
             idb = context;
+            this.userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
         }
 
         public ActionResult Index()
@@ -38,8 +45,39 @@ namespace dot_not.Controllers
         //Comments
         public ActionResult Basic1()
         {
-            ChallengeModel challengeModel = idb.Challenges.Where(c => c.ChallengeID == 1).First();
-            return View(challengeModel);
+            return View(new ChallengeViewModel());
+        }
+
+        [HttpGet]
+        public ActionResult SubmitFlag(int ID)
+        {
+            ChallengeModel challengeModel = idb.Challenges.Where(c => c.ChallengeID == ID).First();
+            ChallengeViewModel CVM = new ChallengeViewModel();
+            CVM.ChallengeNiceID = challengeModel.ChallengeID.ToString();
+            CVM.ChallengeID = challengeModel.ID.ToString();
+
+            return View("ChallengeView", CVM);
+        }
+
+        [HttpPost]
+        public ActionResult SubmitFlag(ChallengeViewModel cvm)
+        {
+            ChallengeModel challengeModel = db.Challenges.Where(c => c.ID.ToString().Equals(cvm.ChallengeID)).First();
+            cvm.Success = false;
+            cvm.HelpText = cvm.FailMessage;
+            cvm.ChallengeNiceID = challengeModel.ChallengeID.ToString();
+            if (challengeModel.Flag.Equals(cvm.Flag))
+            {
+                userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                cvm.Success = true;
+                AppUser user = db.Users.Find(User.Identity.GetUserId());
+                user.Challenges.Add(challengeModel);
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                cvm.HelpText = cvm.SuccessMessage;
+            }
+
+            return View("ChallengeView", cvm);
         }
 
         //Base64 Comments
@@ -121,7 +159,6 @@ namespace dot_not.Controllers
             return View("GenericChallengeView", challengeModel);
         }
 
-        public ActionResult
 
         protected override void Dispose(bool disposing)
         {
@@ -131,5 +168,7 @@ namespace dot_not.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

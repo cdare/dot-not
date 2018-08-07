@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dot_not.Models;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -18,5 +19,7 @@ namespace dot_not.Helpers
 
             return pw.ToString("X");
         }
+
+  
     }
 }

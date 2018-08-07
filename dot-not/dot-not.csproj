@@ -205,8 +205,13 @@
     <Compile Include="Migrations\201808011438147_UpdateToChallenges.Designer.cs">
       <DependentUpon>201808011438147_UpdateToChallenges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808061604170_User_Challenge_Table.cs" />
+    <Compile Include="Migrations\201808061604170_User_Challenge_Table.Designer.cs">
+      <DependentUpon>201808061604170_User_Challenge_Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppUserModel.cs" />
+    <Compile Include="Models\FlagFormViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\ChallengesController.cs" />
@@ -281,7 +286,7 @@
     <Content Include="Views\Challenges\Basic1.cshtml" />
     <Content Include="Views\Challenges\Basic2.cshtml" />
     <Content Include="Views\Challenges\Reversing1.cshtml" />
-    <Content Include="Views\Challenges\GenericChallengeView.cshtml" />
+    <Content Include="Views\Challenges\ChallengeView.cshtml" />
     <Content Include="Views\Challenges\Challenge6.cshtml" />
     <Content Include="Views\Identity\Login.cshtml" />
     <Content Include="Views\Identity\Register.cshtml" />
@@ -295,6 +300,8 @@
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Challenges\_FlagForm.cshtml" />
+    <Content Include="Views\Challenges\GenericChallengeView - Copy.cshtml" />
     <None Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -322,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808011438147_UpdateToChallenges.resx">
       <DependentUpon>201808011438147_UpdateToChallenges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808061604170_User_Challenge_Table.resx">
+      <DependentUpon>201808061604170_User_Challenge_Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

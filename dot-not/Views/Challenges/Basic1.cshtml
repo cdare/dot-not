@@ -1,7 +1,9 @@
-﻿@model dot_not.Models.ChallengeModel
+﻿@using dot_not.Models
+@model ChallengeViewModel
 
 @{
-    ViewBag.title = "Challenge 1";
+    FlagFormViewModel fvm = new FlagFormViewModel();
+    fvm.ChallengeID = Model.Challenge.ID;
 }
 
 <!DOCTYPE html>
@@ -16,8 +18,9 @@
         <h4>Challenge 1</h4>
         <hr />
         <p>The developer of this page was doing a bit of debugging</p>
-        <!--Challege loaded. The flag is:->    
-        <!--@{@Model.Flag}-->
+        <!--Challege loaded. The flag is:->
+        <!--@{@Model.Challenge.Flag}-->
+        {@Html.Partial("_FlagForm", fvm)}
     </div>
     <p>
         @Html.ActionLink("Back to List", "Index")
